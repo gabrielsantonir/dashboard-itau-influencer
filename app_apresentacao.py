@@ -604,10 +604,10 @@ elif page == "9. Visioning: Impacto":
     # LINHA 1: Principalidade
     r1_col1, r1_col2 = st.columns(2)
     with r1_col1:
-        st.markdown("<div class='defense-box' style='min-height: 260px; border-left-color: #003399;'><h4>Expansão e Ativação da Principalidade</h4><ul><li><b>Conversão de Monoliners:</b> Meta de converter 20% dos monoliners (300 mil clientes) em correntistas com vínculo de recebimento.</li><li><b>Ativação da Base de Correntistas:</b> Conversão de 20% do gap de principalidade (400 mil clientes) dos 2M de correntistas secundários para o status de clientes principais.</li><li><b>Objetivo:</b> Elevar o número de clientes com \"vínculo de recebimento no Itaú\" de 1,4 milhão para 2,1 milhões (incremento total de 700 mil novos clientes principais).</li></ul></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 260px; border-left-color: #003399;'><h4>Expansão e Ativação da Principalidade</h4><ul><li><b>Conversão de Monoliners:</b> Meta de converter 20% dos monoliners (300 mil clientes) em correntistas com vínculo de recebimento.</li><li><b>Ativação da Base de Correntistas:</b> Conversão de 20% do gap de principalidade (400 mil clientes) dos 2M de correntistas secundários para o status de clientes principais.</li><li><b>Objetivo:</b> Elevar o número de clientes com \"vínculo de recebimento no Itaú\" de 1,4M para 2,1M (incremento total de 700 mil novos clientes principais).</li></ul></div>", unsafe_allow_html=True)
     with r1_col2:
         df_1 = pd.DataFrame({"Cenário": ["Atual", "Projetado"], "Clientes (M)": [1.4, 2.1]})
-        f1 = px.bar(df_1, x='Cenário', y='Clientes (Milhões)', title="Vínculo de Recebimento (Clientes Principais)", text_auto=True, color='Cenário', color_discrete_map={"Atual": ITAU_BLUE, "Projetado": ITAU_ORANGE}, height=260)
+        f1 = px.bar(df_1, x='Cenário', y='Clientes (M)', title="Vínculo de Recebimento (Clientes Principais)", text_auto=True, color='Cenário', color_discrete_map={"Atual": ITAU_BLUE, "Projetado": ITAU_ORANGE}, height=260)
         f1.update_traces(textposition='inside', textfont_color='white')
         f1.update_layout(showlegend=False, margin=dict(l=10, r=10, t=35, b=10))
         st.plotly_chart(f1, use_container_width=True)
