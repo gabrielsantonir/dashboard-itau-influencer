@@ -129,27 +129,26 @@ elif page == "1. Resumo do Case":
     
     with col_metrics:
         st.markdown("#### O Cenário")
-        st.metric("Mercado Endereçável", "16,9 Mi")
-        st.metric("Presença Itaú", "5,0 Mi", delta="Base Analisada")
+        st.metric("Mercado Endereçável", "16,9M")
+        st.metric("Presença Itaú", "5,0M", delta="Base Analisada")
     
     with col_chart:
         df_base = pd.DataFrame({
             "Segmento": ["Monoliners", "Secundários", "Principais"],
-            "Clientes (Mi)": [1.5, 2.0, 1.4]
+            "Clientes (M)": [1.5, 2.0, 1.4]
         })
-        fig_base = px.pie(df_base, values='Clientes (Mi)', names='Segmento', hole=.4,
+        fig_base = px.pie(df_base, values='Clientes (M)', names='Segmento', hole=.4,
                           color_discrete_sequence=[ITAU_ORANGE, ITAU_BLUE, "#333333"])
-        fig_base.update_layout(height=220, margin=dict(t=0, b=0, l=0, r=0), showlegend=True)
+        fig_base.update_traces(textfont_color='white', textinfo='percent+label', textposition='inside')
+        fig_base.update_layout(height=280, margin=dict(t=0, b=0, l=0, r=0), showlegend=True)
         st.plotly_chart(fig_base, use_container_width=True)
-    
-    st.markdown("#### Raio-X da Base (Slices de Relacionamento)")
     colA, colB, colC = st.columns(3)
     with colA:
-        st.markdown(f"<div class='defense-box' style='min-height: 140px; padding: 10px; border-top: 4px solid {ITAU_ORANGE}; border-left: none;'><b>Monoliners (1,5 Mi)</b><br><p style='font-size: 12px; margin-top: 5px;'>Apenas Cartão. Reconhecimento de marca sem vínculo transacional em conta.</p></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='defense-box' style='min-height: 140px; padding: 10px; border-top: 4px solid {ITAU_ORANGE}; border-left: none;'><b>Monoliners (1,5M)</b><br><p style='font-size: 12px; margin-top: 5px;'>Apenas Cartão. Reconhecimento de marca sem vínculo transacional em conta.</p></div>", unsafe_allow_html=True)
     with colB:
-        st.markdown(f"<div class='defense-box' style='min-height: 140px; padding: 10px; border-top: 4px solid {ITAU_BLUE}; border-left: none;'><b>Secundários (2,0 Mi)</b><br><p style='font-size: 12px; margin-top: 5px;'>Conta aberta, mas sem utilização como banco principal de recebimento.</p></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='defense-box' style='min-height: 140px; padding: 10px; border-top: 4px solid {ITAU_BLUE}; border-left: none;'><b>Secundários (2,0M)</b><br><p style='font-size: 12px; margin-top: 5px;'>Conta aberta, mas sem utilização como banco principal de recebimento.</p></div>", unsafe_allow_html=True)
     with colC:
-        st.markdown(f"<div class='defense-box' style='min-height: 140px; padding: 10px; border-top: 4px solid #333333; border-left: none;'><b>Principais (1,4 Mi)</b><br><p style='font-size: 12px; margin-top: 5px;'>Conta corrente com vínculo de recebimento consolidado (domicílio bancário).</p></div>", unsafe_allow_html=True)
+        st.markdown(f"<div class='defense-box' style='min-height: 140px; padding: 10px; border-top: 4px solid #333333; border-left: none;'><b>Principais (1,4M)</b><br><p style='font-size: 12px; margin-top: 5px;'>Conta corrente com vínculo de recebimento consolidado (domicílio bancário).</p></div>", unsafe_allow_html=True)
 
 
 
@@ -219,9 +218,9 @@ elif page == "3. Direcionamento Estratégico":
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.markdown("<div class='defense-box' style='min-height: 260px;'><h4>Conversão de Monoliners</h4><p><b>(Ataque à Base):</b> Temos 1,5 milhão de clientes que possuem apenas cartão. O foco é a conversão para conta corrente.</p></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 260px;'><h4>Conversão de Monoliners</h4><p><b>(Ataque à Base):</b> Temos 1,5M de clientes que possuem apenas cartão. O foco é a conversão para conta corrente.</p></div>", unsafe_allow_html=True)
     with col2:
-        st.markdown("<div class='defense-box' style='min-height: 260px;'><h4>Ativação de Principalidade</h4><p><b>(A Nossa \"Mina de Ouro\"):</b> Foco em converter os 2 milhões de correntistas secundários em clientes com vínculo de recebimento.</p></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 260px;'><h4>Ativação de Principalidade</h4><p><b>(A Nossa \"Mina de Ouro\"):</b> Foco em converter os 2M de correntistas secundários em clientes com vínculo de recebimento.</p></div>", unsafe_allow_html=True)
     with col3:
         st.markdown("<div class='defense-box' style='min-height: 260px;'><h4>Expansão de Serviços</h4><p><b>(Cross-sell):</b> Elevar a receita de investimentos e seguros para 40% através de produtos de previdência para \"carreiras de ciclo curto\".</p></div>", unsafe_allow_html=True)
     with col4:
@@ -379,13 +378,13 @@ elif page == "5. Governança e Influência":
     st.markdown("<p style='font-size: 13px; margin-bottom: 15px;'>Atuação em Rede e Adensamento da Base.</p>", unsafe_allow_html=True)
     
     st.markdown("### Por que Priorizar o Adensamento?")
-    st.info("Já possuímos uma base instalada de **5 milhões de clientes** (1,5M monoliners, 2M secundários e 1,5M principais). O dado mais crítico do P&L é o nosso **Profit Share de 35%**, o que indica que 65% do valor gerado por esses clientes está saindo para a concorrência.")
+    st.info("Já possuímos uma base instalada de **5M de clientes** (1,5M monoliners, 2M secundários e 1,5M principais). O dado mais crítico do P&L é o nosso Profit Share de 35%, o que indica que 65% do valor gerado por esses clientes não está sendo fidelizado no Itaú, gerando espaço no mercado para os concorrentes.")
     
     colA, colB, colC = st.columns(3)
     with colA:
-        st.markdown("<div class='defense-box' style='min-height: 240px;'><h4>Oportunidade Imediata</h4><p><b>1,5 Milhão de Monoliners:</b> Público com conhecimento da marca, porém com relacionamento restrito ao cartão. Representam nossa maior oportunidade de conversão imediata.</p></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 240px;'><h4>Oportunidade Imediata</h4><p><b>1,5M de Monoliners:</b> Público com conhecimento da marca, porém com relacionamento restrito ao cartão. Representam nossa maior oportunidade de conversão imediata.</p></div>", unsafe_allow_html=True)
     with colB:
-        st.markdown("<div class='defense-box' style='min-height: 240px; border-left-color: #003399;'><h4>Gap de Principalidade</h4><p><b>2 Milhões de Correntistas Secundários:</b> O maior gap da vertical. Clientes que já superaram a barreira da aquisição, mas cujo fluxo ainda reside na concorrência.</p></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 240px; border-left-color: #003399;'><h4>Gap de Principalidade</h4><p><b>2M de Correntistas Secundários:</b> O maior gap da vertical. Clientes que já superaram a barreira da aquisição, mas cujo fluxo ainda reside na concorrência.</p></div>", unsafe_allow_html=True)
     with colC:
         st.markdown("<div class='defense-box' style='min-height: 240px;'><h4>Base de Principalidade</h4><p><b>1,5 Mi Principais:</b> Para a base de clientes com vínculo de recebimento, priorizaremos a identificação de perfis com potencial de investimento e expansão de serviços via cross-sell. O objetivo é mapear contas propensas a novas aquisições, fortalecendo o relacionamento e aumentando a rentabilidade operacional.</p></div>", unsafe_allow_html=True)
 
@@ -492,7 +491,7 @@ elif page == "6. Plano de Ação":
             st.markdown(f"""<div class='defense-box' style='text-align: center; border-left: none; border-top: 4px solid #EC7000;'>
                 <h1 style='border:none; margin-bottom:0;'>🎯</h1>
                 <h4 style='color:#EC7000; margin-top:5px;'>Direcionamento Estratégico</h4>
-                <p><span class="tooltip">(A Escolha)<span class="tooltiptext"><b>Conversão de 1,5 Milhão de Monoliners:</b> Migração do público de cartão para o ecossistema de conta corrente.<br><br><b>Ativação de 2 Milhões de Correntistas Secundários:</b> Transformar contas inativas ou secundárias em contas principais através do vínculo de recebimento (domicílio bancário), estancando a fuga de valor para a concorrência.</span></span></p>
+                <p><span class="tooltip">(A Escolha)<span class="tooltiptext"><b>Conversão de 1,5M de Monoliners:</b> Migração do público de cartão para o ecossistema de conta corrente.<br><br><b>Ativação de 2M de Correntistas Secundários:</b> Transformar contas inativas ou secundárias em contas principais através do vínculo de recebimento (domicílio bancário), estancando a fuga de valor para a concorrência.</span></span></p>
             </div>""", unsafe_allow_html=True)
         with c3:
             st.markdown(f"""<div class='defense-box' style='text-align: center; border-left: none; border-top: 4px solid #333333;'>
@@ -517,17 +516,17 @@ elif page == "7. KPIs e Trade-offs":
     with col1:
         st.markdown("### Indicadores de Sucesso (KPIs)")
         st.write("1. **Profit Share:** Meta de sair de 35% para 45% em 3 anos.")
-        st.write("2. **Índice de Principalidade:** % de clientes com vínculo de recebimento sobre o total de correntistas (Alvo: Migrar os 2 milhões de secundários para o status de principal).")
+        st.write("2. **Índice de Principalidade:** % de clientes com vínculo de recebimento sobre o total de correntistas (Alvo: Migrar os 2M de secundários para o status de principal).")
         st.write("3. **Cross-sell Ratio:** Número médio de produtos por cliente (foco em elevar Seguros e Investimentos).")
-        st.write("4. **Índice de Conversão Monoliner:** % de migração dos 1,5 milhão de clientes de cartão para a conta corrente.")
-        st.write("5. **Share of Wallet Diversificado:** Penetração de produtos de Investimento e Seguros na base de 5 milhões.")
+        st.write("4. **Índice de Conversão Monoliner:** % de migração dos 1,5M de clientes de cartão para a conta corrente.")
+        st.write("5. **Share of Wallet Diversificado:** Penetração de produtos de Investimento e Seguros na base de 5M.")
         st.write("6. **LTV/CAC:** Relação entre o valor que o cliente gera ao longo do tempo versus o custo para mantê-lo ou adquiri-lo.")
         st.write("7. **NPS (Net Promoter Score):** Meta de manter no Nível de Excelência (>75) (Métrica de Sustentabilidade do Relacionamento).")
 
         
     with col2:
         st.markdown("### Trade-offs Estratégicos")
-        st.warning("• **Velocidade vs. Rentabilidade:** Optamos por um crescimento de base nominal mais cadenciado em troca de uma alavancagem imediata de rentabilidade. Priorizar o adensamento dos 2 milhões de correntistas secundários e 1,5 milhão de monoliners garante um LAIR (lucro) superior e mais rápido, visto que operamos com custo marginal de aquisição (CAC) zero para clientes que já estão na nossa base. A \"velocidade\" aqui é medida pela conversão em principalidade, e não apenas pelo volume de novas contas.")
+        st.warning("• **Velocidade vs. Rentabilidade:** Optamos por um crescimento de base nominal mais cadenciado em troca de uma alavancagem imediata de rentabilidade. Priorizar o adensamento dos 2M de correntistas secundários e 1,5M de monoliners garante um LAIR (lucro) superior e mais rápido, visto que operamos com custo marginal de aquisição (CAC) zero para clientes que já estão na nossa base. A \"velocidade\" aqui é medida pela conversão em principalidade, e não apenas pelo volume de novas contas.")
         st.warning("• **Investimento em Tecnologia vs. Marketing:** Priorizamos o orçamento para o desenvolvimento de jornadas de produto e conversão (Ex: Integração PF+PJ, Dashboards de Eficiência Tributária e Gatilhos de Investimento). Entendemos que para o público Influencer, a funcionalidade do ecossistema e a experiência do app (UX) são ferramentas de retenção e adensamento muito mais baratas e eficazes do que campanhas de marketing de massa. Investimos na \"casa\" para garantir que o cliente secundário escolha o Itaú como seu banco principal.")
 
         
@@ -577,7 +576,7 @@ elif page == "8. Influência Transversal Baseada em Dados":
             st.markdown("<div class='defense-box' style='border-left-color: #003399;'><h4>Produtos<br>(Crédito, Investimentos, Seguros)</h4><p>Utilizarei a evidência da sub-penetração de 10% em Investimentos para co-desenvolver produtos especializados que capturem a liquidez de específicos públicos, como Celebridades e da Média Renda, equilibrando o mix de receita.</p></div>", unsafe_allow_html=True)
 
         with c2:
-            st.markdown("<div class='defense-box' style='border-left-color: #EC7000;'><h4>Canais e CRM</h4><p>Direcionarei os esforços de comunicação focando no potencial de conversão dos 1,5 milhão de monoliners, demonstrando o ganho marginal de receita ao transformá-los em correntistas.</p></div>", unsafe_allow_html=True)
+            st.markdown("<div class='defense-box' style='border-left-color: #EC7000;'><h4>Canais e CRM</h4><p>Direcionarei os esforços de comunicação focando no potencial de conversão dos 1,5M de monoliners, demonstrando o ganho marginal de receita ao transformá-los em correntistas.</p></div>", unsafe_allow_html=True)
         with c3:
             st.markdown("<div class='defense-box' style='border-left-color: #333333;'><h4>Operações</h4><p>Será alinhado a necessidade de digitalização da jornada para otimizar os R$ 2,499 bilhões em custos operacionais, garantindo que o custo de servir seja compatível com a rentabilidade de cada segmento.</p></div>", unsafe_allow_html=True)
 
@@ -590,7 +589,7 @@ elif page == "8. Influência Transversal Baseada em Dados":
         with ca1:
             st.markdown("<div class='defense-box' style='height: 100%; border-left: none; border-top: 4px solid #003399;'><h4>Evolução do Profit Share</h4><p style='font-size: 13px;'>Monitoramento do crescimento da nossa fatia de lucro frente ao mercado (atualmente em 35%).</p></div>", unsafe_allow_html=True)
         with ca2:
-            st.markdown("<div class='defense-box' style='height: 100%; border-left: none; border-top: 4px solid #EC7000;'><h4>Índice de Principalidade</h4><p style='font-size: 13px;'>Percentual da base com vínculo de recebimento (foco em elevar os atuais 1,4 milhão de clientes).</p></div>", unsafe_allow_html=True)
+            st.markdown("<div class='defense-box' style='height: 100%; border-left: none; border-top: 4px solid #EC7000;'><h4>Índice de Principalidade</h4><p style='font-size: 13px;'>Percentual da base com vínculo de recebimento (foco em elevar os atuais 1,4M de clientes).</p></div>", unsafe_allow_html=True)
         with ca3:
             st.markdown("<div class='defense-box' style='height: 100%; border-left: none; border-top: 4px solid #003399;'><h4>Eficiência Operacional</h4><p style='font-size: 13px;'>Relação custo/receita para garantir a sustentabilidade do P&L.</p></div>", unsafe_allow_html=True)
         with ca4:
@@ -605,9 +604,9 @@ elif page == "9. Visioning: Impacto":
     # LINHA 1: Principalidade
     r1_col1, r1_col2 = st.columns(2)
     with r1_col1:
-        st.markdown("<div class='defense-box' style='min-height: 260px; border-left-color: #003399;'><h4>Expansão e Ativação da Principalidade</h4><ul><li><b>Conversão de Monoliners:</b> Meta de converter 20% dos monoliners (300 mil clientes) em correntistas com vínculo de recebimento.</li><li><b>Ativação da Base de Correntistas:</b> Conversão de 20% do gap de principalidade (400 mil clientes) dos 2 milhões de correntistas secundários para o status de clientes principais.</li><li><b>Objetivo:</b> Elevar o número de clientes com \"vínculo de recebimento no Itaú\" de 1,4 milhão para 2,1 milhões (incremento total de 700 mil novos clientes principais).</li></ul></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 260px; border-left-color: #003399;'><h4>Expansão e Ativação da Principalidade</h4><ul><li><b>Conversão de Monoliners:</b> Meta de converter 20% dos monoliners (300 mil clientes) em correntistas com vínculo de recebimento.</li><li><b>Ativação da Base de Correntistas:</b> Conversão de 20% do gap de principalidade (400 mil clientes) dos 2M de correntistas secundários para o status de clientes principais.</li><li><b>Objetivo:</b> Elevar o número de clientes com \"vínculo de recebimento no Itaú\" de 1,4 milhão para 2,1 milhões (incremento total de 700 mil novos clientes principais).</li></ul></div>", unsafe_allow_html=True)
     with r1_col2:
-        df_1 = pd.DataFrame({"Cenário": ["Atual", "Projetado"], "Clientes (Milhões)": [1.4, 2.1]})
+        df_1 = pd.DataFrame({"Cenário": ["Atual", "Projetado"], "Clientes (M)": [1.4, 2.1]})
         f1 = px.bar(df_1, x='Cenário', y='Clientes (Milhões)', title="Vínculo de Recebimento (Clientes Principais)", text_auto=True, color='Cenário', color_discrete_map={"Atual": ITAU_BLUE, "Projetado": ITAU_ORANGE}, height=260)
         f1.update_traces(textposition='inside', textfont_color='white')
         f1.update_layout(showlegend=False, margin=dict(l=10, r=10, t=35, b=10))
@@ -711,7 +710,7 @@ elif page == "11. Produtos e Serviços":
 
 <div class='defense-box' style='margin-bottom: 20px; border-left-color: #003399;'>
 <h4 style='color: #003399; margin-bottom: 5px;'>Vínculo de Recebimento (Domicílio Bancário)</h4>
-<p style='margin-top: 0;'>Ferramenta central para converter os 1,5 milhão de monoliners e garantir que o faturamento do influenciador nasça no Itaú.</p>
+<p style='margin-top: 0;'>Ferramenta central para converter os 1,5M de monoliners e garantir que o faturamento do influenciador nasça no Itaú.</p>
 </div>
 
 <div class='defense-box' style='margin-bottom: 20px; border-left-color: #333333;'>
