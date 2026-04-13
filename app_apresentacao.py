@@ -207,7 +207,7 @@ elif page == "2. Diagnóstico P&L":
         st.markdown(html_table, unsafe_allow_html=True)
 
         st.markdown("<p style='font-size: 13px; margin-bottom: 2px; margin-top: 0px;'>• <b>Maiores Fontes:</b> Crédito (40%) e Cartões (30%) sustentam o P&L atual.</p>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size: 13px; margin-bottom: 0px;'>• <b>Ameaça:</b> A baixa penetração em investimentos revela que não somos o banco principal.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size: 13px; margin-bottom: 0px;'>• <b>Ineficiências:</b> A baixa penetração em investimentos revela que o banco ainda não é o pilar principal para a gestão patrimonial do influenciador.</p>", unsafe_allow_html=True)
 
 
 # --- PÁGINA 3: DIRECIONAMENTO ESTRATÉGICO ---
@@ -278,7 +278,7 @@ elif page == "4. Proposta de Valor":
 
     with tab_alta:
         st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown(f"""<div class='defense-box' style='border-left-color: {ITAU_ORANGE};'>
+        st.markdown(f"""<div class='defense-box' style='min-height: 180px; border-left-color: {ITAU_ORANGE};'>
             <h4>Foco: Preservação de Patrimônio</h4>
             <p><b>Estratégia Ecossistema:</b> Identificamos que as celebridades usam o Itaú para transacionar, mas levavam a liquidez para competidores. O foco agora é reter esse patrimônio.</p>
         </div>""", unsafe_allow_html=True)
@@ -289,7 +289,7 @@ elif page == "4. Proposta de Valor":
                 <h4>Exclusividade: Influencer Desk</h4>
                 <p>Implementação de um atendimento dedicado via <b>Itaú Private</b> para acesso a private equity, crédito estruturado e assessoria personalizada.</p>
             </div>""", unsafe_allow_html=True)
-        with col2:
+        with c2:
             st.markdown(f"""<div class='defense-box' style='min-height: 220px;'>
                 <h4>Blindagem e Sucessão</h4>
                 <p>Foco em <b>Planejamento Sucessório</b> e Estruturas Offshore para perenizar o patrimônio, considerando que são carreiras de ciclo curto e alta volatilidade.</p>
