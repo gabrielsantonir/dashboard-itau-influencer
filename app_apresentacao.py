@@ -130,7 +130,7 @@ elif page == "1. Resumo do Case":
     with col_metrics:
         st.markdown("#### O Cenário")
         st.metric("Mercado Endereçável", "16,9M")
-        st.metric("Presença Itaú", "5,0M", delta="Base Analisada")
+        st.metric("Presença Itaú", "4,9M", delta="Base Analisada")
     
     with col_chart:
         df_base = pd.DataFrame({
@@ -378,7 +378,7 @@ elif page == "5. Governança e Influência":
     st.markdown("<p style='font-size: 13px; margin-bottom: 15px;'>Atuação em Rede e Adensamento da Base.</p>", unsafe_allow_html=True)
     
     st.markdown("### Por que Priorizar o Adensamento?")
-    st.info("Já possuímos uma base instalada de **5M de clientes** (1,5M monoliners, 2M secundários e 1,5M principais). O dado mais crítico do P&L é o nosso Profit Share de 35%, o que indica que 65% do valor gerado por esses clientes não está sendo fidelizado no Itaú, gerando espaço no mercado para os concorrentes.")
+    st.info("Já possuímos uma base instalada de **4,9M de clientes** (1,5M monoliners, 2M secundários e 1,4M principais). O dado mais crítico do P&L é o nosso Profit Share de 35%, o que indica que 65% do valor gerado por esses clientes não está sendo fidelizado no Itaú, gerando espaço no mercado para os concorrentes.")
     
     colA, colB, colC = st.columns(3)
     with colA:
@@ -386,7 +386,7 @@ elif page == "5. Governança e Influência":
     with colB:
         st.markdown("<div class='defense-box' style='min-height: 240px; border-left-color: #003399;'><h4>Gap de Principalidade</h4><p><b>2M de Correntistas Secundários:</b> O maior gap da vertical. Clientes que já superaram a barreira da aquisição, mas cujo fluxo ainda reside na concorrência.</p></div>", unsafe_allow_html=True)
     with colC:
-        st.markdown("<div class='defense-box' style='min-height: 240px;'><h4>Base de Principalidade</h4><p><b>1,5 Mi Principais:</b> Para a base de clientes com vínculo de recebimento, priorizaremos a identificação de perfis com potencial de investimento e expansão de serviços via cross-sell. O objetivo é mapear contas propensas a novas aquisições, fortalecendo o relacionamento e aumentando a rentabilidade operacional.</p></div>", unsafe_allow_html=True)
+        st.markdown("<div class='defense-box' style='min-height: 240px;'><h4>Base de Principalidade</h4><p><b>1,4M Principais:</b> Para a base de clientes com vínculo de recebimento, priorizaremos a identificação de perfis com potencial de investimento e expansão de serviços via cross-sell. O objetivo é mapear contas propensas a novas aquisições, fortalecendo o relacionamento e aumentando a rentabilidade operacional.</p></div>", unsafe_allow_html=True)
 
 
         
@@ -519,7 +519,7 @@ elif page == "7. KPIs e Trade-offs":
         st.write("2. **Índice de Principalidade:** % de clientes com vínculo de recebimento sobre o total de correntistas (Alvo: Migrar os 2M de secundários para o status de principal).")
         st.write("3. **Cross-sell Ratio:** Número médio de produtos por cliente (foco em elevar Seguros e Investimentos).")
         st.write("4. **Índice de Conversão Monoliner:** % de migração dos 1,5M de clientes de cartão para a conta corrente.")
-        st.write("5. **Share of Wallet Diversificado:** Penetração de produtos de Investimento e Seguros na base de 5M.")
+        st.write("5. **Share of Wallet Diversificado:** Penetração de produtos de Investimento e Seguros na base de 4,9M.")
         st.write("6. **LTV/CAC:** Relação entre o valor que o cliente gera ao longo do tempo versus o custo para mantê-lo ou adquiri-lo.")
         st.write("7. **NPS (Net Promoter Score):** Meta de manter no Nível de Excelência (>75) (Métrica de Sustentabilidade do Relacionamento).")
 
@@ -652,7 +652,7 @@ elif page == "10. Frame Mental":
 <div style="position: absolute; left: -25px; top: 25px; width: 12px; height: 12px; background-color: #003399; border-radius: 50%; border: 2px solid white;"></div>
 <h4 style='color: #003399; margin-bottom: 5px;'>Passo 1: Mapeamento e Diagnóstico (Data Intelligence)</h4>
 <ul style='margin-top: 0;'>
-<li><b>Ação:</b> Segmentação granular da base interna de 5MM de CPFs (Monoliners vs. Secundários vs. Principais) e cruzamento com o mercado potencial de 16,9MM de influenciadores.</li>
+<li><b>Ação:</b> Segmentação granular da base interna de 4,9MM de CPFs (Monoliners vs. Secundários vs. Principais) e cruzamento com o mercado potencial de 16,9MM de influenciadores.</li>
 <li><b>Foco:</b> Mapear a "fuga de valor" de 65% do Profit Share, identificando com precisão em quais perfis e produtos a concorrência está capturando a liquidez de clientes que já possuem relacionamento com o Itaú.</li>
 </ul>
 </div>
